@@ -6,13 +6,3 @@ int	ft_isdigit(int c)
 		return (0);
 }
 
-// #include <ctype.h>
-// #include <stdio.h>
-
-// int	main()
-// {
-// 	printf("Z is ft_alpha: %d\n", ft_isdigit('5'));
-// 	printf("Z is alpha: %d\n", isdigit('5'));
-// 	printf("* is ft_alpha: %d\n", ft_isdigit('*'));
-// 	printf("* is alpha: %d\n", isdigit('*'));
-// }
