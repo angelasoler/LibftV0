@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char	*ft_substr(char *s, unsigned int start, size_t len)
+char	*ft_substr(char *s,unsigned int start, unsigned int len)
 {
 	char *result;
 	int i;
@@ -22,6 +22,7 @@ int	main()
 {
 	char s[] = "lets take string from 5 position";
 
-	printf("\n%s\n", ft_substr(s, 5, 2048));
-	// printf("\n%s\n", substr(s, 5, 50));
+	printf("%s\n", ft_substr(s, 7, 50));
+	// printf("\n%d\n", substr(s, 5, 50));
+	// it's returning an int and also this funtion is kinf of a strncpy
 }
