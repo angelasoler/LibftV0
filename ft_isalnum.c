@@ -22,13 +22,13 @@ int	ft_isalnum(int c)
 		return (0);
 }
 
-// #include <ctype.h>
-// #include <stdio.h>
+#include <ctype.h>
+#include <stdio.h>
 
-// int	main()
-// {
-// 	printf("g is ft_alpha: %d\n", ft_isalnum('g'));
-// 	printf("g is alpha: %d\n", isalnum('g'));
-// 	printf(", is ft_alpha: %d\n", ft_isalnum(','));
-// 	printf(", is alpha: %d\n", isalnum(','));
-// }
+int	main()
+{
+	printf("g is ft_alpha: %d\n", ft_isalnum('g'));
+	printf("g is alpha: %d\n", isalnum('g'));
+	printf(", is ft_alpha: %d\n", ft_isalnum(','));
+	printf(", is alpha: %d\n", isalnum(','));
+}
