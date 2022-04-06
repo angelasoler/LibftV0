@@ -15,8 +15,8 @@ void	*ft_memset(void *s, int c, size_t n)
 	return (s);
 }
 
-#include <stdio.h>
 #include <string.h>
+#include <stdio.h>
 int	main()
 {
 	long int ftx[5] = {49, 49, 49, 49, 49};
