@@ -11,7 +11,7 @@ int	ft_tolower(int c)
 #include <ctype.h>
 int	main()
 {
-	char ft = 'A';
+	int ft = 'A';
 	char org = '/';
 
 	printf("          -----ft-----\n%c\n\n", ft_tolower(ft));
