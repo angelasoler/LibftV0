@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 19:16:47 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/06 19:53:30 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/06 20:05:25 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,18 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 #include <string.h>
 int	main()
 {
-	char ft_dest[] = "whatever";
-	char ft_src[] = "lets copy these into dest";
-	char dest[] = "whatever";
-	char src[] = "lets copy these into dest";
-	int ft_int_dest[3] = {48, 48, 48};
-	int ft_int_src[4] = {120, 120, 120, 120};
-	int int_dest[3] = {48, 48, 48};
-	int int_src[4] = {120, 120, 120, 120};
+	char ft_dest[] = "abcd";
+	// char ft_src[] = "lets copy these into dest";
+	// char dest[] = "whatever";:	// char src[] = "lets copy these into dest";
+	int ft_int_dest[3] = {48, 49, 50, 51};
+	// int ft_int_src[4] = {120, 120, 120, 120};
+	// int int_dest[3] = {48, 48, 48};
+	// int int_src[4] = {120, 120, 120, 120};
 	int i;
 
 	i = 0;
 	printf("\n\n       ---------receiving char----- \n\n");
-	ft_memmove(ft_dest, ft_src, 2);
+	ft_memmove(ft_dest[2], ft_dest[0], 2);
 	printf("      ------ft-----\n\n---dest---\n%s\n---src---\n%s\n", ft_dest, ft_src);
 	memcpy(dest, src, 2);
 	printf("\n  ------original-----\n\n---dest---\n%s\n---src---\n%s\n", dest, src);
