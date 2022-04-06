@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 16:51:30 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/06 17:47:16 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/06 17:49:15 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	main()
 
 	printf("\n\n       ---------receiving int----- \n\n");
 	ft_memcpy(ft_int_dest, ft_int_src, 2);
-	printf("------ft-----\n\n---dest---\n\n");
+	printf("     ------ft-----\n\n---dest---\n\n");
 	while (i < 3)
 	{
 		printf("\n%d\n", ft_int_dest[i]);
@@ -59,7 +59,7 @@ int	main()
 	}
 	i = 0;
 	memcpy(int_dest, int_src, 2);
-	printf("\n------original-----\n\n---dest---\n\n");
+	printf("\n  ------original-----\n\n---dest---\n\n");
 	while (i < 3)
 	{
 		printf("\n%d\n", int_dest[i]);
