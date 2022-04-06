@@ -1,28 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 15:02:21 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/06 22:25:05 by asoler           ###   ########.fr       */
+/*   Created: 2022/04/06 21:17:45 by asoler            #+#    #+#             */
+/*   Updated: 2022/04/06 22:27:32 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+size_t	ft_strlen(const char *str)
 {
 	unsigned int	i;
-	char			*s1;
 
 	i = 0;
-	s1 = (char *) s;
-	while (i < n)
+	while (str[i])
 	{
-		s1[i] = c;
 		i++;
 	}
-	return (s);
+	return (i);
+}
+
+size_t	ft_strlcat(char *dest, const char *src, size_t count)
+{
+	unsigned int	i;
+	int				len;
+
+	i = 0;
+	len = ft_strlen(dest);
+	while (i < count)
+	{
+		if (src[i] == '\0')
+		{
+			dest[len] = src[i];
+			return (0);
+		}
+		dest[len] = src[i];
+		len++;
+		i++;
+	}
+	dest[len - 1] = '\0';
+	return (0);
 }
