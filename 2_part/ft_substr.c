@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include "../libft"
 
 char	*ft_substr(char *s,unsigned int start, unsigned int len)
 {

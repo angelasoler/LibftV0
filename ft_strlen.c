@@ -1,6 +1,8 @@
-int	ft_strlen(char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (str[i])
@@ -15,6 +17,6 @@ int	ft_strlen(char *str)
 int	main()
 {
 	char s[] = "bla bla bla bla";
-	printf("%d\n", ft_strlen(s));
+	printf("%ld\n", ft_strlen(s));
 	printf("%ld\n", strlen(s));
 }
