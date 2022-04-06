@@ -1,11 +1,23 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/06 15:00:38 by asoler            #+#    #+#             */
+/*   Updated: 2022/04/06 15:03:37 by asoler           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_strlen(char *s)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while(*s)
+	while (*s)
 	{
 		s++;
 		i++;
@@ -22,13 +34,13 @@ char	*ft_strjoin(char *s1, char *s2)
 	size = ft_strlen(s1) + ft_strlen(s2);
 	result = malloc(size * sizeof(char));
 	i = 0;
-	while(*s1)
+	while (*s1)
 	{
 		result[i] = *s1;
 		s1++;
 		i++;
 	}
-	while(*s2)
+	while (*s2)
 	{
 		result[i] = *s2;
 		s2++;
@@ -36,15 +48,4 @@ char	*ft_strjoin(char *s1, char *s2)
 	}
 	result[i] = *s2;
 	return (result);
-}
-
-#include <stdio.h>
-int	main()
-{
-	char *s;
-	char *s1;
-
-	s = "concatenate this string ";
-	s1 = "with this string";
-	printf("%s\n", ft_strjoin(s, s1));
 }

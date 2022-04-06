@@ -1,10 +1,22 @@
-#include <stdio.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/06 14:59:43 by asoler            #+#    #+#             */
+/*   Updated: 2022/04/06 15:05:09 by asoler           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char	*ft_substr(char *s,unsigned int start, unsigned int len)
+#include <stdio.h>
+#include "../libft.h"
+
+char	*ft_substr(char *s, unsigned int start, unsigned int len)
 {
-	char *result;
-	int i;
+	char	*result;
+	int		i;
 
 	i = 0;
 	result = malloc(len * sizeof(char));
@@ -16,13 +28,4 @@ char	*ft_substr(char *s,unsigned int start, unsigned int len)
 	}
 	result[start] = '\0';
 	return (result);
-}
-
-int	main()
-{
-	char s[] = "lets take string from 5 position";
-
-	printf("%s\n", ft_substr(s, 7, 50));
-	// printf("\n%d\n", substr(s, 5, 50));
-	// it's returning an int and also this funtion is kinf of a strncpy
 }

@@ -1,10 +1,14 @@
-#ifndef LIBFT_H
-#define LIBFT_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/06 15:01:26 by asoler            #+#    #+#             */
+/*   Updated: 2022/04/06 15:01:27 by asoler           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	ft_isalpha(int c);
-
-int	ft_isdigit(int c);
-
-int	ft_isalnum(int c);
-
-#endif
+#include <stddef.h>
+#include <stdlib.h>
