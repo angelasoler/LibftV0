@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 21:09:12 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/07 21:39:27 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/07 21:40:45 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main()
 	char s1[] = "hey, now we change";
 	char s2[] = "hey, now we";
 	char s3[] = "hey, now we change";
-	int n = 20;
+	int n = 100;
 
 	printf("   =======indentical strings FT=======\n%d\n\n", ft_strncmp(s1, s3, n));
 	printf("   =======diferent strings FT=======\n%d\n", ft_strncmp(s1, s2, n));
