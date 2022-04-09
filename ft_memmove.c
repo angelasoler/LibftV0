@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 19:16:47 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/06 22:30:43 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/09 20:04:53 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,13 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	char			*sdest;
 	char			*ssrc;
-	char			aux[];
-	unsigned int	i;
 
-	i = 0;
 	sdest = (char *)dest;
 	ssrc = (char *)src;
-	while (i < n)
+	while (n != 0)
 	{
-		aux[i] = ssrc[i];
-		i++;
-	}
-	i = 0;
-	while (i < n)
-	{
-		sdest[i] = aux[i];
-		i++;
+		sdest[n - 1] = ssrc[n - 1];
+		n--;
 	}
 	return ((void *)sdest);
 }

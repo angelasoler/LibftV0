@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 22:03:00 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/09 20:02:32 by asoler           ###   ########.fr       */
+/*   Created: 2022/04/07 22:24:23 by asoler            #+#    #+#             */
+/*   Updated: 2022/04/09 20:04:29 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+#include "libft.h"
+
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	while (*s != '\0' && *s != c)
+	char	*aux;
+
+	aux = (char *)s;
+	while (*aux != c)
 	{
-		s++;
+		if (*aux == '\0')
+			return ((char *) 0);
+		aux++;
+		n--;
 	}
-	if (*s == '\0')
-		return ((char *)0);
+	if (*aux == c)
+		return (aux);
 	else
-		return ((char *)s);
+		return ((char *) 0);
 }
