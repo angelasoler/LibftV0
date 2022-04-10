@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 18:52:29 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/11 01:04:32 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/11 01:38:01 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,8 @@ int	ft_atoi(const char *nptr)
 
 	i = 0;
 	n = (char *) nptr;
-	if (!((nptr[0] == '-' || nptr[0] == '+') || (nptr[0] >= '0' && nptr[0] <= '9')))
-	// if first position of pointer is not signal or number
+	if (!((nptr[0] == '-' || nptr[0] == '+') \
+		|| (nptr[0] >= '0' && nptr[0] <= '9')))
 		return (0);
 	if (ft_strlen(nptr) > 1)
 	{
@@ -75,9 +75,7 @@ int	ft_atoi(const char *nptr)
 		}
 	}
 	while (n[i] >= '0' && n[i] <= '9')
-	{
 		i++;
-	}
 	n[i] = '\0';
 	if (n[0] == '-' || n[0] == '+')
 	{
@@ -95,7 +93,7 @@ int	ft_atoi(const char *nptr)
 #include <stdio.h>
 int	main()
 {
-	char	n[] = "-54546asf564s";
+	char	n[] = "-asf564s";
 	printf("    =====original=====\n%d\n", atoi(n));
 	printf("    =====ft=====\n%d\n", ft_atoi(n));
 }
