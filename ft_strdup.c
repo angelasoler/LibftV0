@@ -6,41 +6,40 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 01:41:57 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/11 01:48:05 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/11 16:40:42 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_strlen(char *src)
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
-	while (*src)
+	while (str[i])
 	{
 		i++;
-		src++;
 	}
 	return (i);
 }
 
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *s)
 {
 	char	*dup;
 	int		size;
 	int		i;
 
 	i = 0;
-	size = ft_strlen(src);
+	size = ft_strlen(s);
 	dup = (char *)malloc(sizeof(char) * size);
-	while (*src)
+	while (*s)
 	{
-		dup[i] = *src;
+		dup[i] = *s;
 		i++;
-		src++;
+		s++;
 	}
-	dup[i] = *src;
+	dup[i] = *s;
 	return (dup);
 }
 
