@@ -6,11 +6,11 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 18:52:29 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/11 01:38:01 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/11 19:07:04 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *s)
+static int	ft_strlen(const char *s)
 {
 	int	i;
 
@@ -23,7 +23,7 @@ int	ft_strlen(const char *s)
 	return (i);
 }
 
-int	power(char n, int len)
+static int	power(char n, int len)
 {
 	int	number;
 
@@ -38,7 +38,7 @@ int	power(char n, int len)
 	return (number);
 }
 
-int	ft(char *n, int len)
+static int	ft(char *n, int len)
 {
 	int	result;
 
@@ -93,7 +93,7 @@ int	ft_atoi(const char *nptr)
 #include <stdio.h>
 int	main()
 {
-	char	n[] = "-asf564s";
+	char	n[] = "-564s";
 	printf("    =====original=====\n%d\n", atoi(n));
 	printf("    =====ft=====\n%d\n", ft_atoi(n));
 }
