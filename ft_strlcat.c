@@ -6,13 +6,13 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 21:17:45 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/06 21:36:19 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/11 20:44:05 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+static size_t	ft_strlen(const char *str)
 {
 	unsigned int	i;
 

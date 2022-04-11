@@ -6,13 +6,13 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 15:24:25 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/11 17:07:38 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/11 20:46:58 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	chr_cmp(const char	*s, char c)
+static int	chr_cmp(const char	*s, char c)
 {
 	while (*s)
 	{
@@ -24,7 +24,7 @@ int	chr_cmp(const char	*s, char c)
 	return (1);
 }
 
-size_t	ft_strlen(const char *str)
+static size_t	ft_strlen(const char *str)
 {
 	unsigned int	i;
 
@@ -36,7 +36,7 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-char	*ft_strdup(const char *s)
+static char	*ft_strdup(const char *s)
 {
 	char	*dup;
 	int		size;

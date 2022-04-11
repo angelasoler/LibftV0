@@ -6,13 +6,13 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 21:05:30 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/10 18:47:00 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/11 20:46:31 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+static char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
 	int	result;
@@ -37,7 +37,7 @@ char *ft_strrchr(const char *s, int c)
 	}
 }
 
-char *ft_strchr(const char *s, int c)
+static char	*ft_strchr(const char *s, int c)
 {
 	while (*s != '\0' && *s != c)
 	{
@@ -49,7 +49,7 @@ char *ft_strchr(const char *s, int c)
 		return ((char *)s);
 }
 
-size_t	ft_strlen(const char *str)
+static size_t	ft_strlen(const char *str)
 {
 	unsigned int	i;
 
@@ -61,7 +61,7 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+static int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	while (n != 0)
 	{

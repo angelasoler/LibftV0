@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 18:52:29 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/11 19:36:47 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/11 20:51:21 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,15 @@ static int	ft_result(char *n, int len)
 	return (result);
 }
 
+int	is_sig_or_num(char c)
+{
+	if (!((c == '-' || c == '+') \
+		|| (c >= '0' && c <= '9')))
+		return (1);
+	else
+		return (0);
+}
+
 int	ft_atoi(const char *nptr)
 {
 	int		i;
@@ -60,8 +69,7 @@ int	ft_atoi(const char *nptr)
 
 	i = 0;
 	n = (char *) nptr;
-	if (!((nptr[0] == '-' || nptr[0] == '+') \
-		|| (nptr[0] >= '0' && nptr[0] <= '9')))
+	if (is_sig_or_num(nptr[0]))
 		return (0);
 	if (ft_strlen(nptr) > 1)
 	{
@@ -86,7 +94,7 @@ int	ft_atoi(const char *nptr)
 #include <stdio.h>
 int	main()
 {
-	char	n[] = "+564s";
+	char	n[] = "564s";
 	printf("    =====original=====\n%d\n", atoi(n));
 	printf("    =====ft=====\n%d\n", ft_atoi(n));
 }
