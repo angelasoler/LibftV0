@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 18:52:29 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/11 19:07:04 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/11 19:36:47 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static int	power(char n, int len)
 	return (number);
 }
 
-static int	ft(char *n, int len)
+static int	ft_result(char *n, int len)
 {
 	int	result;
 
@@ -54,7 +54,6 @@ static int	ft(char *n, int len)
 
 int	ft_atoi(const char *nptr)
 {
-	char	signal;
 	int		i;
 	int		result;
 	char	*n;
@@ -69,22 +68,16 @@ int	ft_atoi(const char *nptr)
 		if (n[1] < '0' || n[1] > '9')
 			return (0);
 		else if (n[0] == '-' || n[0] == '+')
-		{
-			signal = n[0];
 			i = 1;
-		}
 	}
 	while (n[i] >= '0' && n[i] <= '9')
 		i++;
 	n[i] = '\0';
 	if (n[0] == '-' || n[0] == '+')
-	{
-		i -= 1;
-		result = ft(&n[1], i);
-	}
+		result = ft_result(&n[1], i - 1);
 	else
-		result = ft(n, i);
-	if (signal == '-')
+		result = ft_result(n, i);
+	if (n[0] == '-')
 		result *= -1;
 	return (result);
 }
@@ -93,7 +86,7 @@ int	ft_atoi(const char *nptr)
 #include <stdio.h>
 int	main()
 {
-	char	n[] = "-564s";
+	char	n[] = "+564s";
 	printf("    =====original=====\n%d\n", atoi(n));
 	printf("    =====ft=====\n%d\n", ft_atoi(n));
 }
