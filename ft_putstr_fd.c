@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 15:45:04 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/12 15:49:16 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/12 22:20:53 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,4 @@ void	ft_putstr_fd(char *s, int fd)
 		write(fd, s, 1);
 		s++;
 	}
-}
-
-int	main()
-{
-	char	s[] = "Hello world!\n";
-
-	ft_putstr_fd(s, 1);
 }

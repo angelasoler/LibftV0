@@ -6,23 +6,11 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 21:17:45 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/12 21:35:43 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/12 22:21:58 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static size_t	ft_strlen(const char *str)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		i++;
-	}
-	return (i);
-}
 
 size_t	ft_strlcat(char *dest, const char *src, size_t count)
 {

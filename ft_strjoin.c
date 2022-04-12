@@ -6,23 +6,11 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 15:26:52 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/12 21:42:14 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/12 22:21:49 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static size_t	ft_strlen(const char *str)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		i++;
-	}
-	return (i);
-}
 
 char	*ft_strjoin(char *s1, char *s2)
 {

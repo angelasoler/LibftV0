@@ -6,22 +6,11 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 18:52:29 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/12 21:39:00 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/12 22:17:01 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (*s)
-	{
-		i++;
-		s++;
-	}
-	return (i);
-}
+#include "libft.h"
 
 static int	power(char n, int len)
 {

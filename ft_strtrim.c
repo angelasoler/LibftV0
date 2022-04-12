@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 15:24:25 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/12 21:40:42 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/12 22:23:34 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,37 +22,6 @@ static int	chr_cmp(const char	*s, char c)
 			s++;
 	}
 	return (1);
-}
-
-static size_t	ft_strlen(const char *str)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		i++;
-	}
-	return (i);
-}
-
-static char	*ft_strdup(const char *s)
-{
-	char	*dup;
-	int		size;
-	int		i;
-
-	i = 0;
-	size = ft_strlen(s);
-	dup = (char *)malloc(sizeof(char) * size);
-	while (*s)
-	{
-		dup[i] = *s;
-		i++;
-		s++;
-	}
-	dup[i] = *s;
-	return (dup);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)

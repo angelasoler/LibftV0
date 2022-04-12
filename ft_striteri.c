@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 14:44:53 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/12 21:42:02 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/12 22:21:40 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,4 @@ void	ft_striteri(char *s, void (f)(unsigned int, char*))
 		i++;
 		s++;
 	}
-}
-
-void	ft(unsigned int x, char *c)
-{
-	*c += x;
 }
