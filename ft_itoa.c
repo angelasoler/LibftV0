@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 22:10:08 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/11 22:54:28 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/12 21:39:24 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,4 @@ char	*ft_itoa(int n)
 	if (signal)
 		result[0] = '-';
 	return (result);
-}
-
-#include <stdio.h>
-
-int	main()
-{
-	int n = 2147483647;
-
-	printf("    ====ft int to string===\n%s\n", ft_itoa(n));
 }

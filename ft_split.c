@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 17:44:10 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/12 20:43:30 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/12 21:43:38 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char	*ft_strdup(const char *s)
 
 int	count_words(char const *s, char c)
 {
-	int wc;
+	int	wc;
 
 	s++;
 	wc = 1;
@@ -93,23 +93,4 @@ char	**ft_split(char const *s, char c)
 		s1++;
 	}
 	return (result);
-}
-
-#include <stdio.h>
-int	main()
-{
-	char	**frase_into_words = ft_split("hello there general kenobi", ' ');
-	char	**frase_cutting_es = ft_split("hello there general kenobi", 'e');
-	int		i = 0;
-
-	while (frase_into_words[i] != NULL)
-	{
-		printf("%s\n\n", frase_into_words[i]);
-		i++;
-	}
-	while (frase_cutting_es[i] != NULL)
-	{
-		printf("%s\n\n", frase_cutting_es[i]);
-		i++;
-	}
 }

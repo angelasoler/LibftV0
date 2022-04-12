@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 18:52:29 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/11 20:51:21 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/12 21:39:00 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,13 +88,4 @@ int	ft_atoi(const char *nptr)
 	if (n[0] == '-')
 		result *= -1;
 	return (result);
-}
-
-#include <stdlib.h>
-#include <stdio.h>
-int	main()
-{
-	char	n[] = "564s";
-	printf("    =====original=====\n%d\n", atoi(n));
-	printf("    =====ft=====\n%d\n", ft_atoi(n));
 }

@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 01:41:57 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/11 20:43:00 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/12 21:39:53 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,20 +41,4 @@ char	*ft_strdup(const char *s)
 	}
 	dup[i] = *s;
 	return (dup);
-}
-
-#include <string.h>
-#include <stdio.h>
-int	main()
-{
-	char str[] = "this string is going to be dupplicated";
-	char *dup = strdup(str);
-	char *ftdup = ft_strdup(str);
-
-	printf("     =====Original Funtion=====\n%s\n\n", dup);
-	printf("     =====Original Funtion address=====\n%p\n\n", dup);
-	printf("     =====Original String======\n%s\n\n", str);
-	printf("     =====Original String address======\n%p\n\n", str);
-	printf("     ====FT Funtion======\n%s\n\n", ftdup);
-	printf("     ====FT Funtion address======\n%p\n\n", ftdup);
 }

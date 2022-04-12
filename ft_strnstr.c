@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 21:05:30 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/11 20:46:31 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/12 21:40:34 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,16 +103,4 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		else
 			return ((char *)ptr);
 	}
-}
-
-#include <stdio.h>
-#include <string.h>
-int	main()
-{
-	char	big[] = "where is null";
-	char	little[] = "here";
-	int		len = 2;
-
-	// printf("    ======original without len======\n%s\n", strstr(big, little));
-	printf("    ======ft======\n%s\n", ft_strnstr(big, little, len));
 }

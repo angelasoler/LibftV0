@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 15:51:44 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/12 17:44:54 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/12 21:44:34 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,4 @@ void	ft_putnbr_fd(int n, int fd)
 		write(fd, &aux[i], 1);
 		i--;
 	}
-}
-
-int	main()
-{
-	int	n = 2147483647;
-
-	ft_putnbr_fd(n, 1);
 }

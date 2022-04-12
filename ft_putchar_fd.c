@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 15:31:20 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/12 15:38:57 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/12 21:45:23 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,4 @@
 void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
-}
-
-int	main()
-{
-	ft_putchar_fd('x', 1);
-	ft_putchar_fd('\n', 1);
 }

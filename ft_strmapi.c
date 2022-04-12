@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 02:50:16 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/12 15:20:05 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/12 21:40:23 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,20 +41,4 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	}
 	result[i] = *s;
 	return (result);
-}
-
-char	ft(unsigned int x, char c)
-{
-	c += x;
-	return (c);
-}
-
-#include <stdio.h>
-
-int	main()
-{
-	char	s[] = "abc";
-
-	printf("   ====Result of ft=====\n%s\n", ft_strmapi(s, ft));
-	printf("   ====Original string=====\n%s\n", s);
 }

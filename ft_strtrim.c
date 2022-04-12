@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 15:24:25 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/11 20:46:58 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/12 21:40:42 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,20 +78,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	result[i + 2] = '\0';
 	return (result);
-}
-
-#include <stdio.h>
-
-int	main()
-{
-	char	*s1 = "hello there general kenobi";
-	char	*set = "eohilbkna";
-
-	printf("   ======string====\n%s\n", s1);
-	printf("   ======string adress====\n%p\n", s1);
-	printf("   ======set======\n%s\n", set);
-	printf("   ======adress from string returned by function=====\n%p\n", ft_strtrim(s1, set));
-	printf("   ======string returned by function=====\n%s\n", ft_strtrim(s1, set));
-	printf("   ======string  after passing function====\n%s\n", s1);
-	printf("   ======string address after passing function====\n%p\n", s1);
 }
