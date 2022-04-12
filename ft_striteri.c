@@ -1,47 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 21:17:45 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/12 21:35:43 by asoler           ###   ########.fr       */
+/*   Created: 2022/04/12 14:44:53 by asoler            #+#    #+#             */
+/*   Updated: 2022/04/12 15:14:37 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-static size_t	ft_strlen(const char *str)
+void	ft_striteri(char *s, void (f)(unsigned int, char*))
 {
-	unsigned int	i;
+	int i;
 
 	i = 0;
-	while (str[i])
+	while (*s)
 	{
+		f(i, s);
 		i++;
+		s++;
 	}
-	return (i);
 }
 
-size_t	ft_strlcat(char *dest, const char *src, size_t count)
+void	ft(unsigned int x, char *c)
 {
-	unsigned int	i;
-	int				len;
+	*c += x;
+}
 
-	i = 0;
-	len = ft_strlen(dest);
-	while (i < count)
-	{
-		if (src[i] == '\0')
-		{
-			dest[len] = src[i];
-			return (0);
-		}
-		dest[len] = src[i];
-		len++;
-		i++;
-	}
-	dest[len - 1] = '\0';
-	return (0);
+#include <stdio.h>
+
+int	main()
+{
+	char	s[] = "abc";
+
+	ft_striteri(s, ft);
+	printf("   ====string after passing by ft=====\n%s\n", s);
 }

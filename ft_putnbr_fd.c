@@ -1,47 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 21:17:45 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/12 21:35:43 by asoler           ###   ########.fr       */
+/*   Created: 2022/04/12 15:51:44 by asoler            #+#    #+#             */
+/*   Updated: 2022/04/12 17:44:54 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_strlen(const char *str)
+void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned int	i;
+	long int	n2;
+	char		aux[11];
+	int			i;
 
 	i = 0;
-	while (str[i])
+	n2 = n;
+	if (n2 < 0)
 	{
+		write(fd, "-", 1);
+		n2 *= -1;
+	}
+	while (n2 > 9)
+	{
+		aux[i] = (n2 % 10) + 48;
+		n2 /= 10;
 		i++;
 	}
-	return (i);
+	aux[i] = n2 + 48;
+	while (i >= 0)
+	{
+		write(fd, &aux[i], 1);
+		i--;
+	}
 }
 
-size_t	ft_strlcat(char *dest, const char *src, size_t count)
+int	main()
 {
-	unsigned int	i;
-	int				len;
+	int	n = 2147483647;
 
-	i = 0;
-	len = ft_strlen(dest);
-	while (i < count)
-	{
-		if (src[i] == '\0')
-		{
-			dest[len] = src[i];
-			return (0);
-		}
-		dest[len] = src[i];
-		len++;
-		i++;
-	}
-	dest[len - 1] = '\0';
-	return (0);
+	ft_putnbr_fd(n, 1);
 }

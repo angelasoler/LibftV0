@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 22:24:23 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/09 20:04:29 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/12 21:37:14 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 {
 	char	*aux;
 
+	if (n == 0)
+		return ((char *) 0);
 	aux = (char *)s;
 	while (*aux != c)
 	{

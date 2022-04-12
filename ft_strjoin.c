@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 21:17:45 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/12 21:35:43 by asoler           ###   ########.fr       */
+/*   Created: 2022/04/11 15:26:52 by asoler            #+#    #+#             */
+/*   Updated: 2022/04/11 20:43:33 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,24 +24,38 @@ static size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-size_t	ft_strlcat(char *dest, const char *src, size_t count)
+char	*ft_strjoin(char *s1, char *s2)
 {
-	unsigned int	i;
-	int				len;
+	char	*result;
+	int		i;
+	int		size;
 
+	size = ft_strlen(s1) + ft_strlen(s2);
+	result = malloc(size * sizeof(char));
 	i = 0;
-	len = ft_strlen(dest);
-	while (i < count)
+	while(*s1)
 	{
-		if (src[i] == '\0')
-		{
-			dest[len] = src[i];
-			return (0);
-		}
-		dest[len] = src[i];
-		len++;
+		result[i] = *s1;
+		s1++;
 		i++;
 	}
-	dest[len - 1] = '\0';
-	return (0);
+	while(*s2)
+	{
+		result[i] = *s2;
+		s2++;
+		i++;
+	}
+	result[i] = *s2;
+	return (result);
+}
+
+#include <stdio.h>
+int	main()
+{
+	char *s;
+	char *s1;
+
+	s = "concatenate this string ";
+	s1 = "with this string";
+	printf("%s\n", ft_strjoin(s, s1));
 }
