@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 01:41:57 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/12 22:21:22 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/13 15:23:43 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strdup(const char *s)
 	int		i;
 
 	i = 0;
-	size = ft_strlen(s);
+	size = ft_strlen(s) + 1;
 	dup = (char *)malloc(sizeof(char) * size);
 	while (*s)
 	{

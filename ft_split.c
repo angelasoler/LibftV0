@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 17:44:10 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/13 15:03:24 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/13 15:28:29 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,5 @@ char	**ft_split(char const *s, char c)
 		i++;
 	}
 	result[i] = (char *)0;
-	free(s1);
 	return (result);
 }
