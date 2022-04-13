@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 22:10:08 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/12 21:39:24 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/13 17:47:09 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,18 @@ static int	ft_count_digits(long int n)
 	return (i);
 }
 
+static char	*ft_char_to_int(char *dest, long int n, int size)
+{
+	dest[size] = '\0';
+	while (size > 0)
+	{
+		size--;
+		dest[size] = (n % 10) + 48;
+		n /= 10;
+	}
+	return (dest);
+}
+
 char	*ft_itoa(int n)
 {
 	long int	n1;
@@ -41,6 +53,12 @@ char	*ft_itoa(int n)
 	int			signal;
 	char		*result;
 
+	if (n == 0)
+	{
+		result = malloc(sizeof(char) * 2);
+		result = "0\0";
+		return (result);
+	}
 	signal = 0;
 	n1 = n;
 	size = ft_count_digits(n);
@@ -50,12 +68,7 @@ char	*ft_itoa(int n)
 		n1 *= -1;
 		signal = 1;
 	}
-	while (size > 0)
-	{
-		size--;
-		result[size] = (n1 % 10) + 48;
-		n1 /= 10;
-	}
+	ft_char_to_int(result, n1, size);
 	if (signal)
 		result[0] = '-';
 	return (result);
