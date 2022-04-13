@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 20:20:09 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/06 22:25:20 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/13 19:49:30 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	unsigned int	i;
 
+	if (size == 0)
+		return (ft_strlen(src));
 	i = 0;
 	while (i < size)
 	{
@@ -28,5 +30,5 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 		i++;
 	}
 	dest[i - 1] = '\0';
-	return (0);
+	return (ft_strlen(src));
 }
