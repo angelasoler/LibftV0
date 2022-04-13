@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 01:50:46 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/12 22:18:09 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/13 01:56:26 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*x;
 
-	x = malloc(sizeof(size) * nmemb);
-	ft_bzero(x, nmemb);
+	x = malloc(size * nmemb);
+	ft_bzero(x, (size * nmemb));
 	return (x);
 }

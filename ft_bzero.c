@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 15:20:13 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/06 17:53:41 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/13 01:38:46 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,4 @@ void	ft_bzero(void *s, size_t n)
 		result[i] = 0;
 		i++;
 	}
-	return ((void)result);
 }

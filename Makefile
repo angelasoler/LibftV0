@@ -14,7 +14,6 @@ OBJ=ft_atoi.o ft_bzero.o ft_calloc.o ft_isalnum.o ft_isalpha.o ft_isascii.o \
 
 
 all: $(NAME)
-	make clean
 
 $(NAME): $(OBJ)
 	ar -rc $(NAME) $(OBJ)
@@ -22,8 +21,7 @@ $(NAME): $(OBJ)
 %.o: ./%.c ./libft.h
 	$(CC) -c $(CC_FLAGS) $< -o $@
 
-re: fclean
-	make all
+re: fclean all
 
 fclean: clean
 	rm libft.a
