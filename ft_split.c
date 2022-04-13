@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 17:44:10 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/13 15:28:29 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/13 15:53:12 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ static int	count_words(char const *s, char c)
 
 	s++;
 	wc = 1;
+	while (*s == c)
+		s++;
 	while (*s)
 	{
 		while (*s == c)
@@ -43,8 +45,10 @@ char	**ft_split(char const *s, char c)
 	s1 = ft_strdup(s);
 	size = count_words(s, c);
 	result = malloc(sizeof(char *) * size);
-	end = s1;
 	i = 0;
+	while (*s1 == c)
+		s1++;
+	end = s1;
 	while (*s1)
 	{
 		beg = end;
