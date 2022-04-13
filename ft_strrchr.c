@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 20:40:36 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/13 03:34:46 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/13 03:37:53 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
-	int	result;
+	int				i;
+	int				result;
 	unsigned char	a;
 
 	if (c == 0)
