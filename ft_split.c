@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 17:44:10 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/12 22:16:12 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/13 15:03:24 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,26 +40,29 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	int		size;
 
-	s1 = (char *)s;
+	s1 = ft_strdup(s);
 	size = count_words(s, c);
 	result = malloc(sizeof(char *) * size);
 	end = s1;
 	i = 0;
 	while (*s1)
 	{
-		beg = end++;
-		while (*s1 != c)
-		{
+		beg = end;
+		while (*s1 != c && *s1 != '\0')
 			s1++;
-			i++;
-		}
+		*s1 = '\0';
+		s1++;
 		end = s1;
-		s1 = '\0';
-		ft_strlen(beg);
 		result[i] = malloc(sizeof(char *) * (ft_strlen(beg) + 1));
 		result[i] = ft_strdup(beg);
+		while (*end == c && *s1 != '\0')
+		{
+			end++;
+			s1++;
+		}
 		i++;
-		s1++;
 	}
+	result[i] = (char *)0;
+	free(s1);
 	return (result);
 }
