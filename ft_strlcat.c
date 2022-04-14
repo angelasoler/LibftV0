@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 21:17:45 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/14 00:57:20 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/14 15:14:51 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,30 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	len;
-	int				total_len;
+	size_t	dest_len;
+	size_t	src_len;
 
-	i = 0;
+	dest_len = ft_strlen(dest);
+	src_len = ft_strlen(src);
 	if (size <= 0)
-		len = 0;
-	else
-		len = ft_strlen(dest);
-	total_len = ft_strlen(src) + len;
-	if (size <= 0)
-		return (total_len);
-	if (size > len)
+		return (ft_strlen(src));
+	else if (size < dest_len)
+		return (ft_strlen(src) + size);
+	if (*dest)
 	{
-		total_len = ft_strlen(src);
-		while (i < size - len)
+		while (*dest && size != 0)
 		{
-			if (src[i] == '\0')
-			{
-				dest[len] = '\0';
-				return (total_len);
-			}
-			dest[len] = src[i];
-			len++;
-			i++;
+			dest++;
+			size--;
 		}
-		dest[len] = '\0';
+		while(size > 1)
+		{
+			*dest = *src;
+			size--;
+			src++;
+			dest++;
+		}
+		*dest = '\0';	
 	}
-	return (total_len);
+	return (src_len + dest_len);
 }
