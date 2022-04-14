@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 15:25:30 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/14 23:11:49 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/15 00:00:31 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_substr(char *s, unsigned int start, unsigned int len)
 		len = s_len - start;
 	result = malloc((len + 1) * sizeof(char));
 	if (!result)
-		return(NULL);
+		return (NULL);
 	while (i < len)
 	{
 		result[i] = s[start];

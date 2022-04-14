@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 17:44:10 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/13 16:48:20 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/14 23:55:16 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ char	**ft_split(char const *s, char c)
 	char	*s1;
 	int		size;
 
-	if (s == 0 && c == 0)
+	if (*s == 0)
 	{
 		result = malloc(sizeof(char *) * 1);
 		result[0] = (char *)0;

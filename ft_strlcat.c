@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 21:17:45 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/14 19:00:18 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/15 00:00:13 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 		dest++;
 		size--;
 	}
-	while(size > 1 && *src)
+	while (size > 1 && *src)
 	{
 		*dest = *src;
 		size--;
