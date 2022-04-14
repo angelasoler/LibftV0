@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 21:05:30 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/12 22:23:10 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/14 20:31:00 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,24 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	char	*ptrr;
-	char	*ptr;
-	int		size;
+	size_t	size;
+	size_t	i;
 
-	ptrr = ft_strrchr(big, little[0]);
-	ptr = ft_strchr(big, little[0]);
+	i = 0;
 	size = ft_strlen(little);
 	if (size == 0)
 		return ((char *)big);
-	else if (ptr == NULL)
+	else if (len == 0)
 		return ((char *)0);
 	else
 	{
-		while (ptr != ptrr)
+		while (i <= len && *big)
 		{
-			if (ft_strncmp(ptr, little, len) != 0)
-				ptr = ft_strchr(ptr++, little[0]);
-			else
-				return ((char *)ptr);
+			if (*big == little[0] && (len - i) >= size && !ft_strncmp(big, little, size))
+				return ((char *)big);
+			big++;
+			i++;
 		}
-		if (ft_strncmp(ptr, little, size) != 0)
-			return ((char *)0);
-		else
-			return ((char *)ptr);
+		return ((char *)0);
 	}
 }
