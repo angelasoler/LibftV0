@@ -6,7 +6,7 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 21:17:45 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/14 15:14:51 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/14 19:00:18 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,25 +19,22 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 
 	dest_len = ft_strlen(dest);
 	src_len = ft_strlen(src);
-	if (size <= 0)
-		return (ft_strlen(src));
+	if (size == 0)
+		return (src_len);
 	else if (size < dest_len)
-		return (ft_strlen(src) + size);
-	if (*dest)
+		return (src_len + size);
+	while (*dest && size != 0)
 	{
-		while (*dest && size != 0)
-		{
-			dest++;
-			size--;
-		}
-		while(size > 1)
-		{
-			*dest = *src;
-			size--;
-			src++;
-			dest++;
-		}
-		*dest = '\0';	
+		dest++;
+		size--;
 	}
+	while(size > 1 && *src)
+	{
+		*dest = *src;
+		size--;
+		src++;
+		dest++;
+	}
+	*dest = '\0';
 	return (src_len + dest_len);
 }
