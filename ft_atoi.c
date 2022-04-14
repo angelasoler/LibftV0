@@ -6,13 +6,13 @@
 /*   By: asoler <asoler@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 18:52:29 by asoler            #+#    #+#             */
-/*   Updated: 2022/04/12 22:17:01 by asoler           ###   ########.fr       */
+/*   Updated: 2022/04/14 22:03:26 by asoler           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	power(char n, int len)
+static int	power(const char n, int len)
 {
 	int	number;
 
@@ -27,12 +27,12 @@ static int	power(char n, int len)
 	return (number);
 }
 
-static int	ft_result(char *n, int len)
+static int	ft_result(const char *n, int len)
 {
 	int	result;
 
 	result = 0;
-	while (*n)
+	while (len > 0)
 	{
 		len--;
 		result += power(*n, len);
@@ -41,7 +41,7 @@ static int	ft_result(char *n, int len)
 	return (result);
 }
 
-int	is_sig_or_num(char c)
+int	is_sig_or_num(const char c)
 {
 	if (!((c == '-' || c == '+') \
 		|| (c >= '0' && c <= '9')))
@@ -52,29 +52,25 @@ int	is_sig_or_num(char c)
 
 int	ft_atoi(const char *nptr)
 {
-	int		i;
-	int		result;
-	char	*n;
+	int			i;
+	long int	result;
+	int			b;
 
 	i = 0;
-	n = (char *) nptr;
-	if (is_sig_or_num(nptr[0]))
-		return (0);
-	if (ft_strlen(nptr) > 1)
+	b = 0;
+	while ((*nptr >= 9 && *nptr <= 13) || *nptr == 32)
+		nptr++;
+	if (*nptr == '-')
 	{
-		if (n[1] < '0' || n[1] > '9')
-			return (0);
-		else if (n[0] == '-' || n[0] == '+')
-			i = 1;
+		b = 1;
+		nptr++;
 	}
-	while (n[i] >= '0' && n[i] <= '9')
+	else if (*nptr == '+')
+		nptr++;
+	while (nptr[i] >= '0' && nptr[i] <= '9')
 		i++;
-	n[i] = '\0';
-	if (n[0] == '-' || n[0] == '+')
-		result = ft_result(&n[1], i - 1);
-	else
-		result = ft_result(n, i);
-	if (n[0] == '-')
+	result = ft_result(nptr, i);
+	if (b)
 		result *= -1;
-	return (result);
+	return ((int)result);
 }
